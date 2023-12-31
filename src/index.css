@@ -86,6 +86,7 @@ a{
   font-size: 1.4em;
   margin-top: 2em;
   width: 100%;
+  text-align: center;
 }
 footer{
   background-color:#252525 ;
@@ -145,4 +146,51 @@ footer{
 }
 .smth-btn:hover{
   color: wheat;
+}
+.vans-container{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3,1fr);
+  gap: 1em;
+}
+.vans{
+  
+  width: fit-content;
+  margin-left: 2em;
+}
+.van-img{
+  width: 14.327rem;
+  height: 14.327rem;
+}
+.van-details{
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.van-type{
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  color: white;
+  background-color: black;
+}
+.types{
+  border: none;
+  background-color: #FFEAD0;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  
+}
+.simple{
+  background-color: #FF8C38;
+}
+.rugged{
+  background-color: #115E59;
+}
+.luxury{
+  background-color: #161616;
 }

@@ -1,8 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter,Routes, Route, Link } from 'react-router-dom'
-
+import './server'
 // import App from './App.jsx'
 import './index.css'
 
@@ -15,16 +15,16 @@ function App() {
         < nav className='home--nav'>
           <Link to="/" className='home--logo'><h1 >#VANLIFE</h1></Link>
           <Link to='/about'className='home--about'><h3 >About</h3></Link>
-          <Link className='home--vans'><h3 className='home--vans'>Vans</h3></Link>
+          <Link to= '/vans'className='home--vans'><h3 className='home--vans'>Vans</h3></Link>
         </nav>
       
         <Routes>
           <Route path='/' element ={<Home/>} />
           <Route path='/about' element ={<About/>} />
+          <Route path='/vans' element={<Vans/>} />
+          <Route path='/vans/:id' element={<VanDetails/>} />
         </Routes>
-        <footer>
-          Ⓒ 2022 #VANLIFE
-        </footer>
+        <footer> Ⓒ 2022 #VANLIFE</footer>
       </BrowserRouter>
     </React.StrictMode>
 
@@ -43,7 +43,7 @@ function Home(){
               we got the travel vans.</h2>
               <p className='content--p'>Add adventure to your life by joining the #vanlife movement. Rent the perfect 
                 van to make your perfect road trip.</p>
-              <button className='content--btn'>Find your van</button>
+              <Link to= '/vans'className='content--btn'>Find your van</Link>
           </div>
           
         </section>
@@ -72,6 +72,52 @@ function About (){
         </div>
       </main>
     </div>
+  )
+}
+function Vans(){
+  const [vansData,setVansData] = useState([])
+
+  useEffect(()=>{
+    fetch('api/vans')
+      .then(res => res.json())
+      .then(data => setVansData(data.vans))
+  },[])
+  // console.log(vansData)
+
+  return(
+    <div>
+      <h1>Explore our van options</h1> 
+      {/* {vansData.map((type,index)=>(
+        <button key={index} className='types'>{type.type}</button>
+      ))} */}
+      
+      <div className='vans-container'>
+      {vansData.map((van) =>(
+      <>  
+      <Link to={`/vans/${van.id}`}>
+
+      <div key={van.id} className='vans'>
+        
+        <img src={van.imageUrl} alt='image of a van' className='van-img'/>
+        <div className='van-details'>
+          <p className='van-name'>{van.name}</p>
+          <p>${van.price} <br></br><span>/day</span></p>
+          
+        </div>
+        <button className={`van-type ${van.type}`}>{van.type}</button>
+      </div>
+     </Link>
+     </> 
+    ))}
+      </div>
+      
+    </div>
+  )
+}
+
+function VanDetails(){
+  return(
+    <h1>Van details page</h1>
   )
 }
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>)
