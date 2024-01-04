@@ -8,7 +8,32 @@ body{
   margin: 0;
   background-color: #FFF7ED;
   font-family: 'Inter', sans-serif;
+  min-height: 100vh;
   
+}
+.layout{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* flex: 1; */
+}
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* margin: auto; */
+}
+footer{
+  background-color:#252525 ;
+  color: #AAAAAA;
+  height: 4.672rem;
+  font-size: 1em;
+  text-align: center;
+  padding: 1em;
+  padding-top: 2em;
+  /* margin-bottom: 0; */
+  margin-top: auto;
+  padding-top: auto;
 }
 a{
   text-decoration: none;
@@ -16,8 +41,7 @@ a{
 }
 .home--nav{
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 6.97rem; 
 }
@@ -27,13 +51,24 @@ a{
   font-weight: 950;
   
 }
+.navlinks{
+  display: flex;
+  flex-direction: column;
+  margin-right: 1em;
+  /* color: blue; */
+  /* border: 1px solid red; */
 
+}
 .home--about{
   margin-right: 1.5em;
   font-weight: 600;
 }
 .home--vans{
-  margin-right: 2em;
+  /* margin-right: 2em; */
+  font-weight: 600;
+}
+.home--host{
+  margin-right: 1.5em;
   font-weight: 600;
 }
 .home--content {
@@ -48,6 +83,16 @@ a{
   align-items: center;
 }
 
+.navlinks:hover{
+  text-decoration: underline;
+  font-weight: bold;
+}
+.active{
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
+
+}
 .home--content::before {
   content: '';
   position: absolute;
@@ -88,16 +133,7 @@ a{
   width: 100%;
   text-align: center;
 }
-footer{
-  background-color:#252525 ;
-  color: #AAAAAA;
-  height: 4.672rem;
-  font-size: 1em;
-  text-align: center;
-  padding: 1em;
-  padding-top: 2em;
-  margin-bottom: 0;
-}
+
 .header{
   background-image: url("https://images.unsplash.com/photo-1594495894542-a46cc73e081a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   width: 100vh;
@@ -152,6 +188,9 @@ footer{
   grid-template-columns: repeat(2,1fr);
   grid-template-rows: repeat(3,1fr);
   gap: 1em;
+  margin-top: 2em;
+  margin-right: auto;
+  margin-left: auto;
 }
 .vans{
   
@@ -193,4 +232,211 @@ footer{
 }
 .luxury{
   background-color: #161616;
+}
+.van-details-page{
+  display: flex;
+  flex-direction: column;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.van-details-img{
+  width: 31.083rem;
+  height: fit-content;
+}
+.van-type{
+  margin-right: auto;
+  margin-bottom: 0;
+}
+.van-details-section{
+  font-weight: 700;
+  font-size: 1.4em;
+  margin-bottom: 0;
+}
+.rent-btn{
+  border: none;
+  background-color: #FF8C38;
+  color: white;
+  padding: 1em;
+  font-size: 1.1em;
+  margin-bottom: 3em;
+}
+.van-details-p{
+  margin-top: 0;
+}
+.return-link{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.arrow{
+  margin-right: 3px;
+}
+.return{
+  text-decoration: underline;
+}
+.host--nav{
+  margin-left: 2em;
+  margin-right: 1em;
+}
+.dash,.inc,.rev{
+  margin-right: 1rem;
+}
+.owned-vans{
+  margin-left: 2em;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 1em;
+  padding: 1em;
+  width: 100%;
+}
+.owned-van-container{
+  display: flex;
+  flex-direction: column;
+  
+}
+.owned-van-img{
+  width: 100px;
+  margin-right: 1em;
+}
+.owned-van-name{
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.owned-van-price{
+  margin-top: 0.5em;
+}
+.current-van-wrapper{
+  background-color: white;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+  margin-top: 2em;
+  align-items: center;
+}
+.current-van-infos{
+  margin-left: 1em;
+}
+.current-van-name{
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+.current-van-price{
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+.current{
+  width: fit-content;
+}
+.current-van-image{
+  width: 12rem;
+}
+.host{
+  margin-left: 2em;
+}
+.blabla{
+  display: flex;
+  flex-direction: row;
+  margin-right: auto;
+}
+.nav-link{
+  margin-right: auto;
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+.hostNav{
+  margin-right: 1em;
+}
+span{
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.pricing-details{
+ font-size: 2em; 
+ font-weight: 500;
+}
+.pricing-wrapper{
+  margin-right: auto;
+}
+.image-wrapper{
+  margin-right: auto;
+  margin-top: 1em;
+}
+.image-details{
+  width: 10em;
+}
+.filter{
+  color: black;
+  padding: 1em;
+  margin-right: 1em;
+  margin-left: 2em;
+  background-color: wheat;
+  font-weight: 500;
+  
+}
+.filter:hover{
+  background-color: #b8a787;
+  color: white;
+}
+.clear{
+  text-decoration: underline;
+  margin-top: 1em;
+}
+.clear:hover{
+  font-weight: bold;
+}
+button{
+  border: none;
+  background-color: none;
+}
+.error-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin: auto 15em auto 15em;
+}
+.return-btn{
+  background-color: black;
+  color: white;
+  padding: 1em;
+  width: 100%;
+  font-size: 1em; 
+}
+.login-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.email,.pswrd,.login-btn{
+  border: none;
+  padding: 1em;
+  margin-top: 1em;
+  width: 100%;
+}
+.login-btn{
+  background-color: #FF8C38;
+  color: white;
+  font-size: 1em;
+}
+.login-logo{
+  margin-right: 2em;
+  align-items: center;
+}
+.user-error{
+  color: red;
 }
